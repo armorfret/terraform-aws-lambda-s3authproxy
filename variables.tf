@@ -1,6 +1,6 @@
 variable "version" {
   type    = "string"
-  default = "v0.0.1"
+  default = "v0.0.4"
 }
 
 variable "logging-bucket" {
