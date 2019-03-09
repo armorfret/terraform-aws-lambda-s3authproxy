@@ -1,0 +1,24 @@
+Prospectus.extra_dep('file', 'prospectus_travis')
+
+item do
+  noop
+
+  extend ProspectusTravis::Build.new('armorfret/terraform-aws-lambda-s3authproxy')
+
+  deps do
+    item do
+      name 'version'
+
+      expected do
+        github_release
+        repo 'akerl/s3-auth-proxy'
+      end
+
+      actual do
+        grep
+        file 'variables.tf'
+        regex /^\s+default = "(v[\d.]+)"$/
+      end
+    end
+  end
+end
