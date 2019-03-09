@@ -20,5 +20,22 @@ item do
         regex /^\s+default = "(v[\d.]+)"$/
       end
     end
+
+    item do
+      name 'terraform'
+
+      expected do
+        github_release
+        repo 'hashicorp/terraform'
+        regex /^v?([\d.]+)$/
+        filter /^v?([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file '.travis.yml'
+        regex /^\s+- TERRAFORM_VERSION=([\d.]+)$/
+      end
+    end
   end
 end
