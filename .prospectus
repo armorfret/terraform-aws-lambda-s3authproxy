@@ -17,7 +17,7 @@ item do
       actual do
         grep
         file 'variables.tf'
-        regex /^\s+default = "(v[\d.]+)"$/
+        regex /^\s+default\s+= "(v[\d.]+)"$/
       end
     end
 
