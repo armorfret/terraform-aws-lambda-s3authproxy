@@ -1,9 +1,3 @@
-module "certificate" {
-  source    = "armorfret/acm-certificate/aws"
-  version   = "0.0.2"
-  hostnames = ["${var.hostname}"]
-}
-
 module "apigw" {
   source  = "armorfret/apigw-lambda/aws"
   version = "0.0.1"
