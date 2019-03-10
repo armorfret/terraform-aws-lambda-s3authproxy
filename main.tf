@@ -22,6 +22,8 @@ module "apigw" {
   }
 
   access_policy_document = "${data.aws_iam_policy_document.lambda_perms.json}"
+
+  hostname = "${var.hostname}"
 }
 
 module "publish_user" {
