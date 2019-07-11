@@ -3,7 +3,7 @@ module "apigw" {
   version = "0.0.3"
 
   source_bucket  = "${var.lambda_bucket}"
-  source_version = "${var.version}"
+  source_version = "${var.lambda_version}"
   function_name  = "s3authproxy_${var.config_bucket}"
 
   environment_variables = {
