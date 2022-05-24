@@ -31,14 +31,14 @@ module "apigw" {
 
 module "publish_user" {
   source         = "armorfret/s3-publish/aws"
-  version        = "0.2.3"
+  version        = "0.2.4"
   logging_bucket = var.logging_bucket
   publish_bucket = var.data_bucket
 }
 
 module "config_user" {
   source         = "armorfret/s3-publish/aws"
-  version        = "0.2.3"
+  version        = "0.2.4"
   logging_bucket = var.logging_bucket
   publish_bucket = var.config_bucket
 }
