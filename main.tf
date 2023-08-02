@@ -61,6 +61,15 @@ data "aws_iam_policy_document" "lambda_perms" {
   statement {
     actions = [
       "logs:CreateLogGroup",
+    ]
+
+    resources = [
+      "arn:aws:logs:*:*:log-group:/aws/lambda/s3authproxy_${var.config_bucket}",
+    ]
+  }
+
+  statement {
+    actions = [
       "logs:CreateLogStream",
       "logs:PutLogEvents",
     ]
