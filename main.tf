@@ -36,6 +36,21 @@ module "publish_user" {
   publish_bucket = var.data_bucket
 }
 
+resource "aws_s3_bucket_lifecycle_configuration" "this" {
+  bucket = module.publish_user.publish_bucket
+
+  rule {
+    id     = "expiry"
+    status = "Enabled"
+
+    filter {}
+
+    noncurrent_version_expiration {
+      noncurrent_days = 7
+    }
+  }
+}
+
 module "config_user" {
   source         = "armorfret/s3-publish/aws"
   version        = "0.8.1"
