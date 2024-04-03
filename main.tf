@@ -9,7 +9,7 @@ terraform {
 
 module "apigw" {
   source  = "armorfret/apigw-lambda/aws"
-  version = "0.9.0"
+  version = "0.9.1"
 
   source_bucket  = var.lambda_bucket
   source_version = var.lambda_version
@@ -77,7 +77,6 @@ data "aws_iam_policy_document" "lambda_perms" {
 
   statement {
     actions = [
-      "logs:CreateLogGroup",
       "logs:CreateLogStream",
     ]
 
