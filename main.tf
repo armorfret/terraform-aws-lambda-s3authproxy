@@ -33,7 +33,7 @@ module "apigw" {
 
 module "publish_user" {
   source         = "armorfret/s3-publish/aws"
-  version        = "0.9.0"
+  version        = "0.9.1"
   logging_bucket = var.logging_bucket
   publish_bucket = var.data_bucket
 }
@@ -55,7 +55,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
 
 module "config_user" {
   source         = "armorfret/s3-publish/aws"
-  version        = "0.9.0"
+  version        = "0.9.1"
   logging_bucket = var.logging_bucket
   publish_bucket = var.config_bucket
 }
